@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-challenge3',
+  selector: 'challenge3',
   templateUrl: './challenge3.component.html',
   styleUrls: ['./challenge3.component.scss']
 })
@@ -11,7 +11,7 @@ export class Challenge3Component {
     firstname: 'John',
     lastname: 'Doe',
     age: 25,
-    quote: 'saucisse',
+    quote: 'Hello World!',
     photo: 'https://randomuser.me/api/portraits/lego/2.jpg'
   };
 
