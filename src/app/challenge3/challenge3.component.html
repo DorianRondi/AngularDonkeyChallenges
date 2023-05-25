@@ -1,0 +1,15 @@
+<div class="card m-auto" style="width: 18rem;">
+  <img [src]="user.photo" class="card-img-top mb-2" [alt]="user.firstname+' '+user.lastname">
+  <div class="card-body py-0 mb-0 {{visibility}}">
+    <h5 class="card-title">Nom: {{user.lastname}}</h5>
+    <h5 class="card-title">Prenom: {{user.firstname}}</h5>
+    <h5 class="card-title">Age: {{user.age}}</h5>
+  </div>
+  <div class="card-body mt-0 pt-0 ">
+    <label for="userQuote" class="w-100 card-text"><q>{{user.quote}}</q></label>
+    <input type="text" id="userQuote" class="{{visibility}}" [(ngModel)]="user.quote" placeholder="{{user.quote}}">
+  </div>
+  <div class="card-footer">
+    <button id="maskBtn" class="btn btn-primary w-100" (click)="mask()">{{maskInfo}}</button>
+  </div>
+</div>
