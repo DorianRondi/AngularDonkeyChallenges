@@ -1,5 +1,4 @@
 h1 {
-  font-family: 'Lobster', cursive;
   font-size: 250%;
 }
 h2, h3 {
@@ -18,4 +17,7 @@ main > .container {
 {
   min-height: calc(100vh - 220px) !important;
   border: 5px solid tomato;
+}
+.lobster{
+  font-family: 'Lobster', cursive;
 }

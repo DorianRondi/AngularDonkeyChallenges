@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { Challenge3Component } from './challenge3/challenge3.component';
 import { SignUpComponent } from './challenge4/signup.component';
 import { UserComponent } from './challenge4/user.component';
 import { Challenge4Component } from './challenge4/challenge4.component';
-import { FormulaireGC } from './formulaire-gc/formulaire-gc.component';
+import { DrivenForm } from './template-driven-form/driven-form.component';
+import { ReactivForm } from './reactiv-form/reactiv-form.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { FormulaireGC } from './formulaire-gc/formulaire-gc.component';
     SignUpComponent,
     UserComponent,
     Challenge4Component,
-    FormulaireGC
+    DrivenForm,
+    ReactivForm
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
