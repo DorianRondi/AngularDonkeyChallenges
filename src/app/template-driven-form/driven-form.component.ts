@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Order } from './order';
 
 @Component({
-  selector: 'formulaireGC',
-  templateUrl: './formulaire-gc.component.html',
-  styleUrls: ['./formulaire-gc.component.scss']
+  selector: 'driven-form',
+  templateUrl: './driven-form.component.html',
+  styleUrls: ['./driven-form.component.scss']
 })
-export class FormulaireGC {
+export class DrivenForm {
   model: Order = new Order();
   constructor() { }
   onSubmit() {

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormulaireGC } from './formulaire-gc.component';
+import { ReactivForm } from './reactiv-form.component';
 
-describe('FormulaireGC', () => {
-  let component: FormulaireGC;
-  let fixture: ComponentFixture<FormulaireGC>;
+describe('ReactivForm', () => {
+  let component: ReactivForm;
+  let fixture: ComponentFixture<ReactivForm>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FormulaireGC]
+      declarations: [ReactivForm]
     });
-    fixture = TestBed.createComponent(FormulaireGC);
+    fixture = TestBed.createComponent(ReactivForm);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
