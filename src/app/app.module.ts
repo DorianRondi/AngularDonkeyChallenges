@@ -11,6 +11,7 @@ import { Challenge3Component } from './challenge3/challenge3.component';
 import { SignUpComponent } from './challenge4/signup.component';
 import { UserComponent } from './challenge4/user.component';
 import { Challenge4Component } from './challenge4/challenge4.component';
+import { FormulaireGC } from './formulaire-gc/formulaire-gc.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Challenge4Component } from './challenge4/challenge4.component';
     Challenge3Component,
     SignUpComponent,
     UserComponent,
-    Challenge4Component
+    Challenge4Component,
+    FormulaireGC
   ],
   imports: [
     BrowserModule,

@@ -4,13 +4,15 @@ import { Challenge3Component } from './challenge3/challenge3.component';
 import { SignUpComponent } from './challenge4/signup.component';
 import { UserComponent } from './challenge4/user.component';
 import { Challenge4Component } from './challenge4/challenge4.component';
+import { FormulaireGC } from './formulaire-gc/formulaire-gc.component';
 
 const ROUTES: Routes = [
   { path: '2', component: Challenge2Component },
   { path: '3', component: Challenge3Component },
   { path: 'signup', component: SignUpComponent },
   { path: 'user', component: UserComponent },
-  { path: '4', component: Challenge4Component }
+  { path: '4', component: Challenge4Component },
+  { path: 'fgc', component: FormulaireGC }
 ];
 
 export { ROUTES };
