@@ -1,0 +1,86 @@
+<h2>Formulaire Angular</h2>
+<div class="challenge position-relative container-fluid p-0 mt-2">
+  <div class="position-absolute top-50 start-50 translate-middle card m-auto">
+
+    <form (ngSubmit)="formulaireGC.valid && onSubmit()" #formulaireGC="ngForm">
+      <div class="card-body">
+        <div class="mb-3">
+          Form submitted ? {{formulaireGC.submitted}}<br>
+          Form valid ? {{formulaireGC.valid}}<br>
+          Form invalid ? {{formulaireGC.valid}}
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Référence</label>
+          <input
+            id="title"
+            [(ngModel)]="model.title"
+            #title="ngModel"
+            name="title"
+            type="text"
+            class="form-control"
+            placeholder="SnowFix Flow Omni"
+            minlength="5"
+            required
+          >
+        </div>
+        <!-- Message d'erreurs -->
+        <div *ngIf="title.invalid && (title.dirty || title.touched)">
+          <span *ngIf="title.errors?.['required']">Le titre est requis</span>
+          <span *ngIf="title.errors?.['minlength']">5 caractères minimum</span>
+        </div>
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Quantité</label>
+          <input
+            id="quantity"
+            [(ngModel)]="model.quantity"
+            #quantity="ngModel"
+            name="quantity"
+            class="form-control"
+            type="number"
+            required
+          >
+          <!-- Message d'erreurs -->
+          <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)">
+            <span *ngIf="quantity.errors?.['required']">Le titre est requis</span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="date" class="form-label">Date de Commande</label>
+          <input
+            id="date"
+            [(ngModel)]="model.date"
+            #date="ngModel"
+            name="date"
+            class="form-control"
+            type="date"
+            required
+          >
+          <!-- Message d'erreurs -->
+          <div *ngIf="date.invalid && (date.dirty || date.touched)">
+            <span *ngIf="date.errors?.['required']">Le titre est requis</span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">email</label>
+          <input
+            id="email"
+            [(ngModel)]="model.email"
+            #email="ngModel"
+            name="email"
+            class="form-control"
+            type="email"
+            required
+          >
+          <!-- Message d'erreurs -->
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <span *ngIf="email.errors?.['required']">Le titre est requis</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer d-grid gap-2">
+        <button type="submit" class="btn btn-light btn-lg">Validation</button>
+        <button type="reset" class="btn btn-light btn-sm">Réinitialisation</button>
+      </div>
+    </form>
+  </div>
+</div>
