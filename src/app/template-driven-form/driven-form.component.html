@@ -2,7 +2,7 @@
 <div class="challenge position-relative container-fluid p-0 mt-2">
   <div class="position-absolute top-50 start-50 translate-middle card m-auto">
 
-    <form (ngSubmit)="formulaireGC.valid && onSubmit()" #formulaireGC="ngForm">
+    <form (ngSubmit)="drivenForm.valid && onSubmit()" #drivenForm="ngForm">
       <div class="card-body">
         <div class="mb-3">
           <label for="title" class="form-label">Référence</label>
@@ -38,6 +38,7 @@
           <!-- Message d'erreurs -->
           <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)">
             <span *ngIf="quantity.errors?.['required']">La quantité ne peut être nul</span>
+            <span *ngIf="quantity.errors?.['required']">La quantité ne peut être nul</span>
           </div>
         </div>
         <div class="mb-3">
@@ -66,10 +67,12 @@
             class="form-control"
             type="email"
             required
+            email
           >
           <!-- Message d'erreurs -->
           <div *ngIf="email.invalid && (email.dirty || email.touched)">
             <span *ngIf="email.errors?.['required']">Votre eMail est obligatoire</span>
+            <span *ngIf="email.errors?.['email']">eMail invalide</span>
           </div>
         </div>
       </div>
