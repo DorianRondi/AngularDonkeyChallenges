@@ -11,5 +11,6 @@ export class DrivenForm {
   constructor() { }
   onSubmit() {
     console.log(this.model);
+    console.log(DrivenForm);
  }
 }

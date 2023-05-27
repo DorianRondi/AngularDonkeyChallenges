@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="."><h1 class="lobster">{{title}}</h1></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -8,20 +8,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/2']">Challenge 2</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Challenges
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['/2']">Challenge 2</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/3']">Challenge 3</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/4']">Challenge 4</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/3']">Challenge 3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/4']">Challenge 4</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/driven-form']">Form1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/reactiv-form']">Form2</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Cours
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['/driven-form']">driven-form</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/reactiv-form']">reactiv-form</a></li>
+            </ul>
           </li>
         </ul>
         <form class="d-flex d-none" role="search">
