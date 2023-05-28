@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Order } from './order';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'driven-form',
@@ -9,8 +10,7 @@ import { Order } from './order';
 export class DrivenForm {
   model: Order = new Order();
   constructor() { }
-  onSubmit() {
-    console.log(this.model);
+  onSubmit(DrivenForm: NgForm) {
     console.log(DrivenForm);
  }
 }

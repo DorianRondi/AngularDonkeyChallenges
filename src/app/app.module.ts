@@ -14,6 +14,7 @@ import { UserComponent } from './challenge4/user.component';
 import { Challenge4Component } from './challenge4/challenge4.component';
 import { DrivenForm } from './template-driven-form/driven-form.component';
 import { ReactivForm } from './reactiv-form/reactiv-form.component';
+import { Challenge7Component } from './challenge7/challenge7.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReactivForm } from './reactiv-form/reactiv-form.component';
     UserComponent,
     Challenge4Component,
     DrivenForm,
-    ReactivForm
+    ReactivForm,
+    Challenge7Component
   ],
   imports: [
     BrowserModule,

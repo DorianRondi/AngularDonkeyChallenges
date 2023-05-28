@@ -2,7 +2,7 @@
 <div class="challenge position-relative container-fluid p-0 mt-2">
   <div class="position-absolute top-50 start-50 translate-middle card m-auto">
 
-    <form (ngSubmit)="drivenForm.valid && onSubmit()" #drivenForm="ngForm">
+    <form (ngSubmit)="drivenForm.valid && onSubmit(drivenForm)" #drivenForm="ngForm">
       <div class="card-body">
         <div class="mb-3">
           <label for="title" class="form-label">Référence</label>
@@ -13,16 +13,15 @@
             name="title"
             type="text"
             class="form-control"
-            placeholder="SnowFix Flow Omni"
             minlength="5"
             maxlength="20"
             required
           >
         </div>
         <!-- Message d'erreurs -->
-        <div *ngIf="title.invalid && (title.dirty || title.touched)">
-          <span *ngIf="title.errors?.['required']">Aucune référence n'as été précisée</span>
-          <span *ngIf="title.errors?.['minlength'] || title.errors?.['maxlength']">Entrez de 5 à 20 caractères</span>
+        <div class="invalid-feedback" *ngIf="drivenForm.submitted && title.invalid">
+          <ng-container *ngIf="title.errors?.['required']">Aucune référence n'as été précisée</ng-container>
+          <ng-container *ngIf="title.errors?.['minlength'] || title.errors?.['maxlength']">Entrez de 5 à 20 caractères</ng-container>
         </div>
         <div class="mb-3">
           <label for="quantity" class="form-label">Quantité</label>
@@ -36,9 +35,8 @@
             required
           >
           <!-- Message d'erreurs -->
-          <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)">
-            <span *ngIf="quantity.errors?.['required']">La quantité ne peut être nul</span>
-            <span *ngIf="quantity.errors?.['required']">La quantité ne peut être nul</span>
+          <div class="invalid-feedback" *ngIf="drivenForm.submitted && quantity.invalid">
+            <ng-container *ngIf="quantity.errors?.['required']">La quantité ne peut être nul</ng-container>
           </div>
         </div>
         <div class="mb-3">
@@ -53,8 +51,8 @@
             required
           >
           <!-- Message d'erreurs -->
-          <div *ngIf="date.invalid && (date.dirty || date.touched)">
-            <span *ngIf="date.errors?.['required']">Une date est nécéssaire.</span>
+          <div class="invalid-feedback" *ngIf="drivenForm.submitted && date.invalid">
+            <ng-container *ngIf="date.errors?.['required']">Une date est nécéssaire.</ng-container>
           </div>
         </div>
         <div class="mb-3">
@@ -70,9 +68,9 @@
             email
           >
           <!-- Message d'erreurs -->
-          <div *ngIf="email.invalid && (email.dirty || email.touched)">
-            <span *ngIf="email.errors?.['required']">Votre eMail est obligatoire</span>
-            <span *ngIf="email.errors?.['email']">eMail invalide</span>
+          <div class="invalid-feedback" *ngIf="drivenForm.submitted && email.invalid">
+            <ng-container *ngIf="email.errors?.['required']">Votre eMail est obligatoire</ng-container>
+            <ng-container *ngIf="email.errors?.['email']">eMail invalide</ng-container>
           </div>
         </div>
       </div>
