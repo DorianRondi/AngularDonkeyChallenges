@@ -6,34 +6,18 @@
       <div class="card-body">
         <div class="mb-3">
           <label for="title" class="form-label">Référence</label>
-          <input
-            id="title"
-            [(ngModel)]="model.title"
-            #title="ngModel"
-            name="title"
-            type="text"
-            class="form-control"
-            minlength="5"
-            maxlength="20"
-            required
-          >
+          <input id="title" [(ngModel)]="model.title" #title="ngModel" name="title" type="text" class="form-control" minlength="5" maxlength="20" required>
+          <!-- Message d'erreurs -->
+          <div class="invalid-feedback" *ngIf="drivenForm.submitted && title.invalid">
+            <ng-container *ngIf="title.errors?.['required']">Aucune référence n'as été précisée</ng-container>
+            <ng-container *ngIf="title.errors?.['minlength'] || title.errors?.['maxlength']">Entrez de 5 à 20
+              caractères</ng-container>
+          </div>
         </div>
-        <!-- Message d'erreurs -->
-        <div class="invalid-feedback" *ngIf="drivenForm.submitted && title.invalid">
-          <ng-container *ngIf="title.errors?.['required']">Aucune référence n'as été précisée</ng-container>
-          <ng-container *ngIf="title.errors?.['minlength'] || title.errors?.['maxlength']">Entrez de 5 à 20 caractères</ng-container>
-        </div>
+        
         <div class="mb-3">
           <label for="quantity" class="form-label">Quantité</label>
-          <input
-            id="quantity"
-            [(ngModel)]="model.quantity"
-            #quantity="ngModel"
-            name="quantity"
-            class="form-control"
-            type="number"
-            required
-          >
+          <input id="quantity" [(ngModel)]="model.quantity" #quantity="ngModel" name="quantity" class="form-control" type="number" required>
           <!-- Message d'erreurs -->
           <div class="invalid-feedback" *ngIf="drivenForm.submitted && quantity.invalid">
             <ng-container *ngIf="quantity.errors?.['required']">La quantité ne peut être nul</ng-container>
@@ -41,15 +25,7 @@
         </div>
         <div class="mb-3">
           <label for="date" class="form-label">Date de Commande</label>
-          <input
-            id="date"
-            [(ngModel)]="model.date"
-            #date="ngModel"
-            name="date"
-            class="form-control"
-            type="date"
-            required
-          >
+          <input id="date" [(ngModel)]="model.date" #date="ngModel" name="date" class="form-control" type="date" required>
           <!-- Message d'erreurs -->
           <div class="invalid-feedback" *ngIf="drivenForm.submitted && date.invalid">
             <ng-container *ngIf="date.errors?.['required']">Une date est nécéssaire.</ng-container>
@@ -57,16 +33,7 @@
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">email</label>
-          <input
-            id="email"
-            [(ngModel)]="model.email"
-            #email="ngModel"
-            name="email"
-            class="form-control"
-            type="email"
-            required
-            email
-          >
+          <input id="email" [(ngModel)]="model.email" #email="ngModel" name="email" class="form-control" type="email" required email>
           <!-- Message d'erreurs -->
           <div class="invalid-feedback" *ngIf="drivenForm.submitted && email.invalid">
             <ng-container *ngIf="email.errors?.['required']">Votre eMail est obligatoire</ng-container>

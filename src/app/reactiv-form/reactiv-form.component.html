@@ -1,23 +1,32 @@
 <h2>Reactiv Form</h2>
 <div class="challenge position-relative container-fluid p-0 mt-2">
   <div class="position-absolute top-50 start-50 translate-middle card m-auto">
-    <form>
+    <form [formGroup]="reactiv" (ngSubmit)="onSubmit()">
       <div class="card-body">
         <div class="mb-3">
-          <label for="title" class="form-label">Référence</label>
-          <input id="title" type="text" class="form-control" required>
+          <label for="ref" class="form-label">Référence</label>
+          <input id="ref" type="text" class="form-control" formControlName="ref">
+          <!-- Message d'erreurs -->
+          <div class="invalid-feedback" *ngIf="reactiv.invalid">
+            "Hello world !!"
+            <!--
+            <ng-container *ngIf="title.errors?.['required']">Aucune référence n'as été précisée</ng-container>
+            <ng-container *ngIf="title.errors?.['minlength'] || title.errors?.['maxlength']">Entrez de 5 à 20 caractères</ng-container>
+            -->
+          </div>
         </div>
+
         <div class="mb-3">
           <label for="quantity" class="form-label">Quantité</label>
-          <input id="quantity" class="form-control" type="number" required>
+          <input id="quantity" class="form-control" type="number" formControlName="quantity">
         </div>
         <div class="mb-3">
           <label for="date" class="form-label">Date de Commande</label>
-          <input id="date" class="form-control" type="date" required>
+          <input id="date" class="form-control" type="date" formControlName="date">
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">email</label>
-          <input id="email" class="form-control" type="email" required email>
+          <input id="email" class="form-control" type="email" formControlName="email">
         </div>
       </div>
       <div class="card-footer d-grid gap-2">
