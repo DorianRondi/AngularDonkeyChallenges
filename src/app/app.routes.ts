@@ -7,6 +7,7 @@ import { Challenge4Component } from './challenge4/challenge4.component';
 import { DrivenForm } from './template-driven-form/driven-form.component';
 import { ReactivForm } from './reactiv-form/reactiv-form.component';
 import { Challenge7Component } from './challenge7/challenge7.component';
+import { Codex } from './codex/codex.component';
 
 const ROUTES: Routes = [
   { path: '2', component: Challenge2Component },
@@ -16,7 +17,8 @@ const ROUTES: Routes = [
   { path: '4', component: Challenge4Component },
   { path: 'driven-form', component: DrivenForm },
   { path: '7', component: Challenge7Component },
-  { path: 'reactiv-form', component: ReactivForm }
+  { path: 'reactiv-form', component: ReactivForm },
+  { path: 'codex', component: Codex }
 ];
 
 export { ROUTES };

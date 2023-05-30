@@ -1,3 +1,10 @@
+// Import du fichier SCSS de Bootstrap //
+@import "bootstrap/scss/bootstrap";
+
+// Import des icones FontAwsome //
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+
+// styles personnalisés //
 h1 {
   font-size: 250%;
 }

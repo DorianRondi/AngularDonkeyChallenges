@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,8 @@ import { Challenge4Component } from './challenge4/challenge4.component';
 import { DrivenForm } from './template-driven-form/driven-form.component';
 import { ReactivForm } from './reactiv-form/reactiv-form.component';
 import { Challenge7Component } from './challenge7/challenge7.component';
+import { Codex } from './codex/codex.component';
+import { WarriorListComponent } from './codex/warrior-list/warrior-list.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,12 @@ import { Challenge7Component } from './challenge7/challenge7.component';
     Challenge4Component,
     DrivenForm,
     ReactivForm,
-    Challenge7Component
+    Challenge7Component,
+    Codex,
+    WarriorListComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,

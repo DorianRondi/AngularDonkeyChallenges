@@ -1,0 +1,20 @@
+<div class="codex position-relative container-fluid p-0 mt-2  d-flex flex-column flex-nowrap">
+  <div class="card col-2">
+    <div class="card-body">
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="warriorName">
+      </div>
+    </div>
+    <div class="card-footer d-grid gap-2">
+      <button type="submit" class="btn btn-light" (click)="addWarrior()">Recruter</button>
+    </div>
+  </div>
+  <div class="col">
+    <ng-container *ngFor="let warrior of warriors">
+      <p>{{ warrior.name }} à intégrer les {{ warrior.chapitre }}</p>
+      <button class="btn btn-danger btn-sm">Démissionner</button>
+    </ng-container>
+  </div>
+</div>
+
+<!--<warrior-item [name]="warriorName"></warrior-item>-->
